@@ -6,7 +6,6 @@
 .sidebar{
     padding-top: 5rem;
     width: 122px;
-    position: relative;
     ul{
         @extend .flex-ac;
         flex-direction: column;
@@ -19,9 +18,7 @@
         cursor: pointer;
     }
     button{
-        position: absolute;
-        bottom: 11rem;
-        left: 3.7rem;
+        margin-left: 3.5rem;
     }
 }
 
@@ -31,6 +28,7 @@
     gap: 5rem;
     padding-top: 5rem;
     width: 122px;
+    z-index: 9;
 }
 
     nav{

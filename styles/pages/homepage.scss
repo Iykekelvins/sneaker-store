@@ -3,14 +3,35 @@
     img{
         margin-left: 6rem !important;
     }
-   .info{
+   &--info{
        @extend .flex-ac;
        flex-direction: column;
        position: absolute;
        left: 4rem;
        top: 12rem;
        z-index: 9;
-       button{
+       h1{
+        text-align: center;
+       }
+   }
+}
+
+.page-two {
+    position: relative;
+    &--info{
+        position: absolute;
+        left: -10rem;
+        top: 13rem;
+    }
+    &--img{
+        position: relative;
+        left: 25rem;
+        bottom: 9rem;
+    }
+}
+
+.page-one, .page-two {
+    button{
         width:235px;
         height: 74px;
         font-size: 1.75rem;
@@ -27,8 +48,6 @@
     h1{
         font-size: 4rem;
         font-weight: 700;
-        text-align: center;
         line-height: 76px;
     }
-   }
 }

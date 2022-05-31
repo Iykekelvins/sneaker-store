@@ -4,7 +4,7 @@ import Image from 'next/image';
 const PageOne = () => {
   return (
     <section className='container page-one'>
-      <div className='info'>
+      <div className='page-one--info'>
         <h1>
           {/* NIKE SB DUNK LOW */}
           BEN & JERRY’S <br /> 
