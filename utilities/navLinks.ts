@@ -4,7 +4,7 @@ export const navLinks = [
         routes:[
             {
                 name:"AIR JORDAN",
-                url:""
+                url:"/nike/air-jordan"
             },
             {
                 name:"AIR FORCE",
@@ -27,7 +27,30 @@ export const navLinks = [
     {
         name:"YEEZY",
         routes:[
-
+            {
+                name:"ALL",
+                url:""
+            },
+            {
+                name:"350",
+                url:""
+            },
+            {
+                name:"700",
+                url:""
+            },
+            {
+                name:"QNTM",
+                url:""
+            },
+            {
+                name:"FOAM RNNR",
+                url:""
+            },
+            {
+                name:"BOOTS",
+                url:""
+            },
         ]
     },
     {

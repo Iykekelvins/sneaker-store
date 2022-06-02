@@ -1,18 +1,72 @@
 import React from 'react';
+import { useState } from 'react';
+import Submenu from './Submenu';
 import { navLinks } from '../../utilities/navLinks';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
+  const [value, setValue] = useState<number>(0);
+  const [showMenu, setShowMenu] = useState(new Array(5).fill(false));
+
+  const handleMenu = (position: any) => {
+    const updatedMenu = showMenu.map((item, index) =>
+      index === position ? !item : item
+    );
+    setShowMenu(updatedMenu);
+  };
+
   return (
     <nav>
-        <ul className='nav-links'>
-            {
-                navLinks.map(link => 
-                <li
-                key={link.name}
-                >{link.name}</li>    
-                )
+      <>
+      <AnimatePresence>
+        { 
+        !showMenu[value] &&
+         <motion.ul className='nav-links'
+          initial={{
+            opacity: 0.5,
+          }}
+          transition={{ type: "tween", duration: 1.2 }}
+          animate={{ opacity: 1 }}
+          exit={{
+          opacity: 0,
+          }}
+      >
+          { navLinks.map((link, index)=> 
+          <li
+          key={link.name}
+          onClick={()=>{
+            setValue(index);
+            handleMenu(index);
+          }}
+          >{link.name}
+          </li>  
+          ) }
+        </motion.ul>
             }
-        </ul>
+        </AnimatePresence>
+        <AnimatePresence>
+        {
+          showMenu[value] &&
+          <motion.div
+          initial={{
+          opacity: 0.5,
+          position:"absolute",          
+        }}
+         transition={{ type: "tween", duration: 1.2 }}
+         animate={{ opacity: 1 }}
+         exit={{
+           opacity: 0.5,
+           position:"absolute",
+          }}
+         >
+          <Submenu 
+            value={value}
+            handleMenu={handleMenu}
+            />
+         </motion.div>
+        }
+        </AnimatePresence>
+      </>
        <button>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="black" strokeOpacity="0.8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -15,10 +15,11 @@
         color: rgba(0, 0, 0, 0.9);
         transform: rotate(180deg);
         writing-mode: vertical-rl;
+        padding-left: 3rem;
         cursor: pointer;
     }
     button{
-        margin-left: 3.5rem;
+        margin-left: 1.55rem;
     }
 }
 
@@ -47,6 +48,12 @@
                 color: rgba(0, 0, 0, 0.4);
                 cursor: pointer;
             }
+        }
+        .sub-menu{
+            // position: absolute;
+            left: -6rem;
+            bottom: -2rem;
+            width: 1000px;
         }
         .menu{
             position: absolute;

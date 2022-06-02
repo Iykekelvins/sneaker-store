@@ -5,8 +5,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  overflow: hidden;
-  overflow-y: auto;
+  // overflow: hidden;
+  // overflow-y: auto;
 }
 
 a {
@@ -31,6 +31,7 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+  font-family:inherit;
 }
 
 .flex-ac-jb {
