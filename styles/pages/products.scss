@@ -1,7 +1,7 @@
 .products{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    // position: relative;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    place-items: center;
     &--card{
         @extend .flex-ac-jc;
         flex-direction: column;
@@ -21,7 +21,6 @@
                 -webkit-animation: fadeinout 0.8s linear forwards;
                 transition: all ease-in-out 0.5s;
             }
-            // &:fo
         }
         .info{
             margin-left: -3rem;
@@ -36,12 +35,7 @@
             }
         }
     }
-}
-
-// @-webkit-keyframes fadeinout {
-//     0%,100% { opacity: 1; }
-//     50% { opacity: 0; }
-//   }
+   }
 
 @keyframes fadeinout {
     0%{ opacity: 0.25; transform: scale(1.02); }

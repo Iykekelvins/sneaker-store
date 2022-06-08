@@ -21,7 +21,9 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
         <>
             <Sidebar/>
         </>
+            <div className="container">
             {children}
+            </div>
         <>
             <SocialLinks/>
         </>

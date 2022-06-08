@@ -21,7 +21,7 @@ const Home: NextPage = () => {
        initial={{
          opacity: 0,
         }}
-        transition={{ type: "tween", duration: 1.2 }}
+        transition={{ type: "tween", duration: 1 }}
         animate={{ opacity: 1 }}
         exit={{
           opacity: 0,
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
      initial={{
           opacity: 0,
         }}
-        transition={{ type: "tween", duration: 1.2 }}
+        transition={{ type: "tween", duration: 1 }}
         animate={{ opacity: 1 }}
         exit={{
           opacity: 0,

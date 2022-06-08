@@ -1,0 +1,129 @@
+.cart-item{
+    display: flex;
+   position: fixed;
+   top: 0;
+   width: 1500px;
+   height: 100vh;
+    &--left{
+        height: 100%;
+        width: 50%;
+        .info{
+            padding-top: 4rem;
+            padding-left: 7rem;
+            h2{
+                font-size: 2.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            h3{
+                font-size: 1.7rem;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            p{
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-top: 1rem;
+            }
+        }
+        .img{
+            position: absolute;
+            left: 3rem;
+            img{
+                transform: scaleX(-1);
+            }
+        }
+    }
+    &--right{
+        height: 100%;
+        width: 50%;
+        background: #FFFFFF;
+        .back{
+            border-radius: 8px;
+            height: 44px;
+            width: 74px;
+            background: #FFFFFF;
+            margin-top: 4rem;
+            margin-left: 5rem;
+        }
+    }
+    &--details{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        margin: 0 auto;
+        .title{
+            text-align: center;
+        }
+        .top{
+            margin-top: 4rem;
+        }
+        .flex, .edit{
+            @extend .flex-ac-jb;
+        }
+        .flex{
+            margin-bottom: 1.5rem;
+            div{
+                @extend .flex-ac;
+            }
+        }
+        .edit{
+            width: 31%;
+        }
+        .border{
+            width: 350px;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+        }
+        .summary{
+            &--title{
+                margin-bottom: 1.5rem;
+            }
+        }
+        .payment-btn{
+            width: 100%;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: #F3F2F1;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            svg{
+                margin-left: 1.25rem;
+            }
+            &:hover{
+                svg{
+                    animation: shakeRight 0.8s linear forwards;
+                }
+            }
+        }
+        h4{
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: 500;
+        }
+        p{
+            color: rgba(0, 0, 0, 0.6);
+            font-weight: 400;
+            margin-left: 1rem;
+        }
+
+        //Billing Method
+        .payment{
+            .title{
+                margin: 3rem 0;
+            }
+            .border{
+                margin-bottom: 1.25rem;
+            }
+            &--info{
+                @extend .flex-ac;
+                margin-bottom: 1.25rem;
+                position: relative;
+                svg{
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

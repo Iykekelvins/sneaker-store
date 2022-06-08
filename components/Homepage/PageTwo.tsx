@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const PageTwo = () => {
   return (
@@ -10,9 +11,11 @@ const PageTwo = () => {
         TO YOURSELF <br /> 
         AND YOUR FEET
         </h1>
-        <button>
+       <Link href="/nike"> 
+       <button>
           SHOP NOW
         </button>
+       </Link>
       </div>
       <div className='page-two--img'>
         <Image 

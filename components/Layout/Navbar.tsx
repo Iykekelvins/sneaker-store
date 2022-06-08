@@ -25,7 +25,7 @@ const Navbar = () => {
           initial={{
             opacity: 0.5,
           }}
-          transition={{ type: "tween", duration: 1.2 }}
+          transition={{ type: "tween", duration: 1 }}
           animate={{ opacity: 1 }}
           exit={{
           opacity: 0,
@@ -52,7 +52,7 @@ const Navbar = () => {
           opacity: 0.5,
           position:"absolute",          
         }}
-         transition={{ type: "tween", duration: 1.2 }}
+         transition={{ type: "tween", duration: 1 }}
          animate={{ opacity: 1 }}
          exit={{
            opacity: 0.5,

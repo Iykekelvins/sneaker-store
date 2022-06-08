@@ -5,7 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import ProductPage from '../Reusable/ProductPage';
 
 const NikePage = () => {
-  const sneakerList = sneakers.find((sneaker) => sneaker.name === "Nike")?.air_jordan
+  const sneakerList = sneakers.find((sneaker) => sneaker.name === "Nike")?.air_jordan;
+  const page = "/nike/air-jordan";
 
   const [value, setValue] = useState(0);
   const [productInfo, setProductInfo] = useState(false);
@@ -53,7 +54,7 @@ const NikePage = () => {
        initial={{
        y:1000
       }}
-      transition={{ type: "tween", duration: 1.2 }}
+      transition={{ type: "tween", duration: 1 }}
       animate={{ y: 0 }}
       exit={{
         y: 1000,
@@ -65,6 +66,7 @@ const NikePage = () => {
      height={526.1}
      width={839.84}
      hide={setProductInfo}
+     page={page}
      />
    </motion.div>
      }
