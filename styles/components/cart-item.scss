@@ -21,9 +21,10 @@
                 font-weight: 500;
             }
             p{
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 font-weight: 500;
                 margin-top: 1rem;
+                width: 365px;
             }
         }
         .img{
@@ -54,6 +55,7 @@
         margin: 0 auto;
         .title{
             text-align: center;
+            margin-bottom: 3rem;
         }
         .top{
             margin-top: 4rem;
@@ -79,6 +81,14 @@
         .summary{
             &--title{
                 margin-bottom: 1.5rem;
+            }
+            .payment{
+                position: relative;
+                &--info{
+                    position: absolute;
+                    left: 2rem;
+                    top: -0.15rem;
+                }
             }
         }
         .payment-btn{
@@ -108,10 +118,7 @@
         }
 
         //Billing Method
-        .payment{
-            .title{
-                margin: 3rem 0;
-            }
+        .billing{
             .border{
                 margin-bottom: 1.25rem;
             }
@@ -123,6 +130,33 @@
                     position: absolute;
                     right: 0;
                 }
+            }
+        }
+
+        //SHipping Info
+        .shipping-info{
+            input{
+                color: #667085;
+                font-family: 'Inter', sans-serif;
+                border: 1px solid #D0D5DD;
+                width: 350px;;
+                padding: 0.75rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        //ORDER DETAILS
+        .order-details{
+            .name{
+                align-items: baseline;
+                div{
+                    flex-direction: column;
+                    align-items: unset;
+                }
+            }
+            button{
+                color: #FFFFFF;
+                background: #000000;
             }
         }
     }

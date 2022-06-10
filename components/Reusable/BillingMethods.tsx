@@ -4,13 +4,13 @@ import { payments } from '../../utilities/payments';
 
 const BillingMethods = () => {
   return (
-    <div className='payment'>
+    <div className='billing'>
         <h3 className='title'>Billing Method</h3>
         <div className="border"></div>
         {
             payments.map(payment => (
                 <article key={payment.name}>
-                    <div className="payment--info">
+                    <div className="billing--info">
                         <Image 
                         src={payment.img}
                         width={43.75}

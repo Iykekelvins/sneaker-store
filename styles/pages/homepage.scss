@@ -17,16 +17,18 @@
 }
 
 .page-two {
+    display: flex;
     position: relative;
+    transition: all 1s linear;
     &--info{
         position: absolute;
-        left: -10rem;
-        top: 13rem;
+        left: 5rem;
+        top: 10rem;
     }
     &--img{
         position: relative;
-        left: 25rem;
-        bottom: 9rem;
+        top: -8rem;
+        right: -44rem;
     }
 }
 
