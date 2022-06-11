@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from "next/image";
 import {useRouter} from "next/router";
 import BillingMethods from "./BillingMethods";
 import CartItemSummary from './CartItemSummary';
 import ShippingInfo from './ShippingInfo';
 import OrderDetails from './OrderDetails';
+import {AnimatePresence, motion } from 'framer-motion';
+
 
 type CartItemProps = {
     sneakerItem: any
@@ -12,8 +14,18 @@ type CartItemProps = {
 
 const CartItem:React.FC<CartItemProps> = ({sneakerItem}) => {
   const router = useRouter();
-  console.log(sneakerItem);
-  
+  const [showBilling, setShowBilling] = useState(false);
+  const [showShipping, setShowShipping] = useState(false);
+
+  const handleRouting = () =>{
+    if(showBilling){ 
+      setShowBilling(false)
+    } else if(showShipping){
+      setShowShipping(false)
+    } else{
+      router.back()
+    }
+  }
     
   return (
     <div className='cart-item'>
@@ -45,20 +57,31 @@ const CartItem:React.FC<CartItemProps> = ({sneakerItem}) => {
 
     <div className="cart-item--right">
     <button className='back'
-              onClick={()=> router.back()}
+              onClick={handleRouting}
     >
         Back
     </button>
-    
     <div className="cart-item--details">
-      {/* <CartItemSummary 
-      sneakerItem={sneakerItem}
-      /> */}
-      <OrderDetails 
+         <CartItemSummary 
+          sneakerItem={sneakerItem}
+          billing={showBilling}
+          setShowBilling = {setShowBilling}
+          shipping={showShipping}
+          setShowShipping={setShowShipping}
+       />
+      {/* <OrderDetails 
         sneakerItem={sneakerItem}
-      />
-      {/* <BillingMethods /> */}
-      {/* <ShippingInfo /> */}
+      /> */}
+       
+            <BillingMethods 
+            billing={showBilling}
+            setShowBilling={setShowBilling}
+            
+            /> 
+          <ShippingInfo 
+          shipping={showShipping}
+          setShowShipping={setShowShipping}
+          />
     </div>
     </div>
     </div>

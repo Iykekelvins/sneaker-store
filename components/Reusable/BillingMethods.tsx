@@ -2,9 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import { payments } from '../../utilities/payments';
 
-const BillingMethods = () => {
+type BillingMethodsProps = {
+    billing: boolean
+    setShowBilling: (e: any)=> void
+}
+
+const BillingMethods:React.FC<BillingMethodsProps> = ({billing, setShowBilling}) => {
   return (
-    <div className='billing'>
+    <div className={billing ? "show-billing billing" : "billing"}>
         <h3 className='title'>Billing Method</h3>
         <div className="border"></div>
         {
@@ -34,7 +39,9 @@ const BillingMethods = () => {
                 </article>
             ))
         }
-        <button className="payment-btn">
+        <button className="payment-btn"
+        onClick={()=> setShowBilling(false)}
+        >
             SAVE BILLING METHOD
             <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_57_2303)">

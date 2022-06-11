@@ -53,6 +53,7 @@
         flex-direction: column;
         width: 350px;
         margin: 0 auto;
+        position: relative;
         .title{
             text-align: center;
             margin-bottom: 3rem;
@@ -84,11 +85,16 @@
             }
             .payment{
                 position: relative;
+                cursor: pointer;
                 &--info{
                     position: absolute;
                     left: 2rem;
                     top: -0.15rem;
                 }
+            }
+
+            .shipping{
+                cursor: pointer;
             }
         }
         .payment-btn{
@@ -117,8 +123,21 @@
             margin-left: 1rem;
         }
 
+        .hide-details{
+                animation: moveDetails forwards 1.2s linear;
+                // transition: all 1s linear;
+            }
+
+        .details{
+                animation: displayDetails forwards 1s linear;
+                // transition: all 1s linear;
+            }
+
         //Billing Method
         .billing{
+            position: absolute;
+            transform: translateY(-800px);
+            transition: all 1s linear;
             .border{
                 margin-bottom: 1.25rem;
             }
@@ -131,17 +150,26 @@
                     right: 0;
                 }
             }
+            &.show-billing{
+                transform: translateY(0);
+            }
         }
 
         //SHipping Info
         .shipping-info{
+            position: absolute;
+            transform: translateY(-800px);
+            transition: all 1s linear;
             input{
                 color: #667085;
                 font-family: 'Inter', sans-serif;
                 border: 1px solid #D0D5DD;
-                width: 350px;;
+                width: 350px;
                 padding: 0.75rem 1rem;
                 margin-bottom: 1.5rem;
+            }
+            &.show-shipping{
+                transform: translateY(0);
             }
         }
 

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Input from './Input';
 
-const ShippingInfo = () => {
+type ShippingProps = {
+  shipping: boolean
+  setShowShipping: (e: any)=> void
+}
+
+const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
     const [state, setState] = useState({
         first_name: "",
         last_name: "",
@@ -21,8 +26,15 @@ const ShippingInfo = () => {
     });
     }
 
+    const onSubmit = (e: any) =>{
+      e.preventDefault();
+      setShowShipping(false)
+    }
+
   return (
-    <form className='shipping-info'>
+    <form className={shipping ? "shipping-info show-shipping" : "shipping-info"}
+    onSubmit={onSubmit}
+    >
         <h3 className='title'>SHIPPING INFORMATION</h3>
         <Input 
         type='text'

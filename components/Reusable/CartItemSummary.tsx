@@ -3,11 +3,15 @@ import React from 'react';
 
 type CartItemSummaryProps = {
     sneakerItem: any
+    billing: boolean
+    shipping: boolean
+    setShowShipping: (e: any)=> void
+    setShowBilling: (e:any)=> void
 }
 
-const CartItemSummary: React.FC<CartItemSummaryProps> = ({sneakerItem}) => {
+const CartItemSummary: React.FC<CartItemSummaryProps> = ({sneakerItem, billing, setShowBilling, shipping, setShowShipping}) => {
   return (
-<div>
+<div className={billing || shipping ? "hide-details" : "details"}>
     <h3 className='title'>YOUR ORDER DETAILS</h3>
     <div className="top">
     <div className="flex">
@@ -49,21 +53,25 @@ const CartItemSummary: React.FC<CartItemSummaryProps> = ({sneakerItem}) => {
   </div>
   <div className="border"></div>
 
-  <div className="flex payment">
+  <div className="flex payment"
+  onClick={()=> setShowBilling(true)}
+  >
     <div>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M21 4H3C1.89543 4 1 4.89543 1 6V18C1 19.1046 1.89543 20 3 20H21C22.1046 20 23 19.1046 23 18V6C23 4.89543 22.1046 4 21 4Z" stroke="black" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M1 10H23" stroke="black" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    {/* <p>Add a payment method</p> */}
-    <div className="payment--info">
+    <p>Add a payment method</p>
+    
+    {/* chosen payment method */}
+    {/* <div className="payment--info">
         <Image 
         src="/images/payments/mastercard.png"
         width={43.75}
         height={30}
         />
         <p>Paystack</p>
-    </div>
+    </div> */}
     </div>
 
     <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +80,9 @@ const CartItemSummary: React.FC<CartItemSummaryProps> = ({sneakerItem}) => {
   </div>
   <div className="border"></div>
 
-  <div className="flex shipping">
+  <div className="flex shipping"
+  onClick={()=> setShowShipping(true)}
+  >
     <div>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="black" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
