@@ -2,12 +2,14 @@ import React from 'react';
 
 type OrderDetailsProps = {
     sneakerItem: any
+    quantity: number
+    checkout: boolean
 }
 
-const OrderDetails: React.FC<OrderDetailsProps> = ({sneakerItem}) => {
+const OrderDetails: React.FC<OrderDetailsProps> = ({sneakerItem, quantity, checkout}) => {
   return (
-    <div className='order-details'>
-        <h3 className="title">YOUR ORDER DETAILS</h3>
+    <div className={checkout ? 'order-details show-checkout' : 'order-details'}>
+        {/* <h3 className="title">YOUR ORDER DETAILS</h3> */}
         <div className="flex">
             <h4>Order ID:</h4>
             <h3>{sneakerItem?.id}</h3>
@@ -28,7 +30,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({sneakerItem}) => {
 
         <div className="flex">
             <h4>QUANTITY:</h4>
-            <h3>1</h3>
+            <h3>{quantity}</h3>
         </div>
         <div className="border"></div>
 
@@ -47,7 +49,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({sneakerItem}) => {
         </div>
         <div className="border"></div>
 
-        <button className='payment-btn'>THANK YOU</button>
+        {/* <button className='payment-btn'>THANK YOU</button> */}
     </div>
   )
 }

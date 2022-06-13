@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, {useState} from 'react';
 import {sneakers} from "../../utilities/sneakers";
 import { AnimatePresence, motion } from 'framer-motion';
-import ProductPage from '../Reusable/ProductPage';
+import ProductPage from '../Reusable/CartInfo/ProductPage';
 
 const NikePage = () => {
   const sneakerList = sneakers.find((sneaker) => sneaker.name === "Nike")?.air_jordan;

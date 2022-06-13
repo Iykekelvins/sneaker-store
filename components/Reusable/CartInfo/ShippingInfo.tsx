@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import Input from './Input';
+import Input from '../Input';
+import {useDispatch} from "react-redux";
+import {addInfo} from "../../../redux/userSlice";
 
 type ShippingProps = {
   shipping: boolean
@@ -7,6 +9,7 @@ type ShippingProps = {
 }
 
 const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
+    const dispatch = useDispatch();
     const [state, setState] = useState({
         first_name: "",
         last_name: "",
@@ -28,6 +31,7 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
 
     const onSubmit = (e: any) =>{
       e.preventDefault();
+      dispatch(addInfo(state));
       setShowShipping(false)
     }
 
@@ -42,6 +46,7 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
         value={state.first_name}
         onChange={handleChange}
         placeholder="First Name"
+        required
         />
         <Input 
         type='text'
@@ -49,6 +54,7 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
         value={state.last_name}
         onChange={handleChange}
         placeholder="Last Name"
+        required
         />
         <Input 
         type='text'
@@ -63,6 +69,7 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
         value={state.address}
         onChange={handleChange}
         placeholder="Street Address"
+        required
         />
         <Input 
         type='text'
@@ -77,6 +84,7 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
         value={state.city}
         onChange={handleChange}
         placeholder="City"
+        required
         />
         <Input 
         type='text'
@@ -84,6 +92,7 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
         value={state.state}
         onChange={handleChange}
         placeholder="State"
+        required
         />
         <Input 
         type='text'
@@ -91,20 +100,12 @@ const ShippingInfo:React.FC<ShippingProps> = ({shipping, setShowShipping}) => {
         value={state.phone_number}
         onChange={handleChange}
         placeholder="Phone Number"
+        required
         />
          <button className="payment-btn">
             SAVE SHIPPING INFO
-            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_57_2303)">
-            <path d="M1.26562 1.77319L7.67941 7.77319L1.26562 13.7732" stroke="black" stroke-opacity="0.9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_57_2303">
-            <rect width="8.82353" height="15" fill="white" transform="translate(0.0882568 0.5)"/>
-            </clipPath>
-            </defs>
-    </svg>
-  </button>
+            <img src="/svgs/black-arrow.svg" alt="arrow icon" />
+          </button>
     </form>
   )
 }

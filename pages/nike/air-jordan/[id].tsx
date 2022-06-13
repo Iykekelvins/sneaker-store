@@ -1,5 +1,5 @@
 import React from 'react';
-import CartItem from '../../../components/Reusable/CartItem';
+import CartItem from '../../../components/Reusable/CartInfo/CartItem';
 import {sneakers} from "../../../utilities/sneakers";
 import { useRouter } from "next/router";
 

@@ -10,6 +10,18 @@
         .info{
             padding-top: 4rem;
             padding-left: 7rem;
+            transition: all 1s linear;
+            &.move-down{
+                transform: translateY(1000px);
+                height: 0;
+            }
+            &.move-purchased{
+                padding-top: 0;
+            }
+            &.purchased{
+                transform: translateY(-800px);
+                height: 0;
+            }
             h2{
                 font-size: 2.75rem;
                 font-weight: 700;
@@ -79,24 +91,6 @@
             background: rgba(0, 0, 0, 0.2);
             margin-bottom: 1.5rem;
         }
-        .summary{
-            &--title{
-                margin-bottom: 1.5rem;
-            }
-            .payment{
-                position: relative;
-                cursor: pointer;
-                &--info{
-                    position: absolute;
-                    left: 2rem;
-                    top: -0.15rem;
-                }
-            }
-
-            .shipping{
-                cursor: pointer;
-            }
-        }
         .payment-btn{
             width: 100%;
             font-size: 1.25rem;
@@ -104,8 +98,15 @@
             background: #F3F2F1;
             padding: 1rem 0;
             margin-top: 2rem;
-            svg{
+            &.complete-btn{
+                color: #FFFFFF;
+                background: #000000;
+            }
+            img{
                 margin-left: 1.25rem;
+            }
+            div{
+                @extend .flex-ac-jc;
             }
             &:hover{
                 svg{
@@ -123,15 +124,40 @@
             margin-left: 1rem;
         }
 
-        .hide-details{
-                animation: moveDetails forwards 1.2s linear;
-                // transition: all 1s linear;
+        // Cart Item Summary
+        .cart-item-summary{
+            transition: all 1s linear;
+            transform: translate(0, 0);
+            input{
+                border: none;
+                background: none;
+                outline: none;
+                width: 100%;
+                font-size: 1.25rem;
+                font-weight: 600;
             }
-
-        .details{
-                animation: displayDetails forwards 1s linear;
-                // transition: all 1s linear;
+            &.hide-summary{
+                transform: translate(-1800px, 700px);
             }
+            .summary{
+                &--title{
+                    margin-bottom: 1.5rem;
+                }
+                .payment{
+                    position: relative;
+                    cursor: pointer;
+                    &--info{
+                        position: absolute;
+                        left: 2rem;
+                        top: -0.15rem;
+                    }
+                }
+    
+                .shipping{
+                    cursor: pointer;
+                }
+            }
+        }
 
         //Billing Method
         .billing{
@@ -143,9 +169,13 @@
             }
             &--info{
                 @extend .flex-ac;
+                cursor: pointer;
                 margin-bottom: 1.25rem;
                 position: relative;
-                svg{
+                input{
+                    margin-right: 1rem;
+                }
+                .icon{
                     position: absolute;
                     right: 0;
                 }
@@ -155,7 +185,7 @@
             }
         }
 
-        //SHipping Info
+        //Shipping Info
         .shipping-info{
             position: absolute;
             transform: translateY(-800px);
@@ -175,6 +205,13 @@
 
         //ORDER DETAILS
         .order-details{
+            position: absolute;
+            transform: translateY(-800px);
+            margin-top: 5.5rem;
+            transition: all 1s linear;
+            &.show-checkout{
+                transform: translateY(0);
+            }
             .name{
                 align-items: baseline;
                 div{
@@ -185,6 +222,27 @@
             button{
                 color: #FFFFFF;
                 background: #000000;
+            }
+        }
+        .move-down{
+            transform: translateY(800px);
+            transition: all 1s linear;
+        }
+        .move-up{
+            transform: translateY(0);
+            transition: all 1s linear;
+        }
+        .thank-you-btn{
+            transform: translateY(-800px);
+            height: 0;
+            position: absolute;
+            bottom: 1.7rem;
+            left: 32%;
+            opacity: 0;
+            &.move{
+                transform: translateY(0);
+                opacity: 1;
+                transition: all 1s linear;   
             }
         }
     }
