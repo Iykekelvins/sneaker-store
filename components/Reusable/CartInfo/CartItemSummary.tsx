@@ -29,10 +29,12 @@ const CartItemSummary: React.FC<CartItemSummaryProps> = ({
 
   const address = useSelector(selectAddress);
   const payment = useSelector(selectPayment);
-  const ref = useRef(null)
+  const ref = useRef(null);
+
+  const price = parseInt(sneakerItem.price) * quantity
 
   //check if address or payment option is empty
-  const condition = address === "";
+  const condition = address === "" || quantity == 0;
 
   const handleCheckout = () => {
     if(condition){
@@ -77,7 +79,7 @@ const CartItemSummary: React.FC<CartItemSummaryProps> = ({
       <h3 className='summary--title'>Summary</h3>
         <div className="flex">
           <h4>Subtotal:</h4>
-          <h3>$8,066</h3>
+          <h3>${price}</h3>
         </div>
  
     <div className="flex">
@@ -88,7 +90,7 @@ const CartItemSummary: React.FC<CartItemSummaryProps> = ({
 
     <div className="flex">
       <h4>Total:</h4>
-      <h3>$8,166</h3>
+      <h3>${price + 100}</h3>
     </div>
     <div className="border"></div>
 

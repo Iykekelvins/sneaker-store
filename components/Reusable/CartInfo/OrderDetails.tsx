@@ -7,6 +7,8 @@ type OrderDetailsProps = {
 }
 
 const OrderDetails: React.FC<OrderDetailsProps> = ({sneakerItem, quantity, checkout}) => {
+    const price = parseInt(sneakerItem.price) * quantity
+
   return (
     <div className={checkout ? 'order-details show-checkout' : 'order-details'}>
         {/* <h3 className="title">YOUR ORDER DETAILS</h3> */}
@@ -24,7 +26,7 @@ const OrderDetails: React.FC<OrderDetailsProps> = ({sneakerItem, quantity, check
 
         <div className="flex">
             <h4>PRICE:</h4>
-            <h3>{sneakerItem.price}</h3>
+            <h3>{price}</h3>
         </div>
         <div className="border"></div>
 

@@ -5,7 +5,7 @@ export const sneakers = [
             {   id:"7EE9JEVUU",
                 name:"Jordan 1 Retro High",
                 info:"Travis Scott",
-                price:"$1,816",
+                price:"1816",
                 img:"/images/air-jordan/img1.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#F3F2F1"
@@ -13,7 +13,7 @@ export const sneakers = [
             {   id:"8W96P9FVW",
                 name:"Jordan 1 Retro High",
                 info:"OBSIDIAN UNC",
-                price:"$457",
+                price:"457",
                 img:"/images/air-jordan/img2.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#E5EBF5"
@@ -21,7 +21,7 @@ export const sneakers = [
             {   id:"TS7R729BT",
                 name:"Jordan 1 Retro High",
                 info:"POLLEN",
-                price:"$1,816",
+                price:"1816",
                 img:"/images/air-jordan/img3.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#F6E9D5"
@@ -29,7 +29,7 @@ export const sneakers = [
             {   id:"0IZBPJ5UY",
                 name:"Jordan 1 Retro High",
                 info:"TOKYO BIO HACK",
-                price:"$1,816",
+                price:"1816",
                 img:"/images/air-jordan/img4.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#ECEFF3"
@@ -37,7 +37,7 @@ export const sneakers = [
             {   id:"J6KQ9KFPW",
                 name:"Jordan 1 Retro High",
                 info:"OG PROTOTYPE",
-                price:"$1,680",
+                price:"1680",
                 img:"/images/air-jordan/img5.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#F1EAE9"
@@ -45,7 +45,7 @@ export const sneakers = [
             {   id:"DRF6LO4HO",
                 name:"Jordan 1 Retro High",
                 info:"TURBO GREEN",
-                price:"$542",
+                price:"542",
                 img:"/images/air-jordan/img6.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#EBF2F4"
@@ -53,7 +53,7 @@ export const sneakers = [
             {   id:"W6FM12OF8",
                 name:"Jordan 1 Retro High",
                 info:"OFF-WHITE",
-                price:"$6,750",
+                price:"6750",
                 img:"/images/air-jordan/img7.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#F9FBFB"
@@ -61,7 +61,7 @@ export const sneakers = [
             {   id:"8DLAS0QOI",
                 name:"Jordan 1 Retro High",
                 info:"PINE GREEN",
-                price:"$510",
+                price:"510",
                 img:"/images/air-jordan/img8.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#D5F6E9"
@@ -69,7 +69,7 @@ export const sneakers = [
             {   id:"ECSOOWHDH",
                 name:"Jordan 1 Retro High",
                 info:" J BALVIN",
-                price:"$386",
+                price:"386",
                 img:"/images/air-jordan/img9.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#EDF7F0"
@@ -77,7 +77,7 @@ export const sneakers = [
             {   id:"ALCURU859",
                 name:"Jordan 1 Retro High",
                 info:"DIOR",
-                price:"$8,956",
+                price:"8956",
                 img:"/images/air-jordan/img10.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#F8F4F2"
@@ -85,7 +85,7 @@ export const sneakers = [
             {   id:"IAQ1KTAB0",
                 name:"Jordan 1 Retro High",
                 info:"BRED TOE",
-                price:"$631",
+                price:"631",
                 img:"/images/air-jordan/img11.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#F7D4D7"
@@ -93,7 +93,7 @@ export const sneakers = [
             {   id:"5V7H7W3PV",
                 name:"Jordan 1 Retro High",
                 info:"BLACK GYM RED",
-                price:"$298",
+                price:"298",
                 img:"/images/air-jordan/img12.png",
                 img_lg:"/images/air-jordan/img1_lg.png",
                 background:"#EFEFF2"
