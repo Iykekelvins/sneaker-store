@@ -1,0 +1,169 @@
+.product-page{
+    position: fixed;
+    top: 0;
+    width: 1500px;
+    height: 100vh;
+    display: flex;
+    &--left{
+        height: 100%;
+        width: 50%;
+        .sizes{
+            @extend .flex-ac;
+            flex-direction: column;
+            width: max-content;
+            margin-top: 7rem;
+            margin-left: 7rem;
+            button{
+                display: flex;
+                align-items: baseline;
+                gap: 1rem;
+                margin-bottom: 3.6rem;
+                cursor: pointer;
+                z-index: 999;
+                svg{
+                    transform: rotate(180deg);
+                    transition: all 0.3s linear;
+                    &.show{
+                        transform: rotate(0deg);
+                    }
+                }
+                p{
+                    font-weight: 600;
+                }
+            }
+            .content{
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.3s linear;
+                &.show{
+                    max-height: 250px;
+                }
+            }
+            .size-info{
+                @extend .flex-ac;
+                flex-direction: column;
+                width: max-content;
+                margin-bottom: 2rem;
+                h3, h4{
+                    color: rgba(42, 36, 34, 0.2);
+                }
+                h3{
+                    font-size: 1.5rem;
+                }
+                h4{
+                    font-size: 1.125rem;
+                }
+            }
+        }
+        .img{
+            position: absolute;
+            left: 6rem;
+            bottom: 10rem;
+            z-index: 9;
+            img{
+                transform: scale(0.8);
+            }
+        }
+        .info{
+            position: absolute;
+            bottom: 3rem;
+            left: 6rem;
+            h2{
+                font-size: 2.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            h3{
+                font-size: 1.7rem;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            div{
+                margin-top: 2.5rem;
+                svg{
+                    margin-right: 3rem;
+                }
+            }
+        }
+    }
+    &--right{
+        background: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(7px);
+        height: 100%;
+        width: 50%;
+        .back{
+            border-radius: 8px;
+            height: 44px;
+            width: 74px;
+            background: #FFFFFF;
+            position: absolute;
+            right: 3rem;
+            top: 7.5rem;
+        }
+        .overlay-btn{
+            position: absolute;
+            right: 3rem;
+            bottom: 10.5rem;
+        }
+        .btn-container{
+            @extend .flex-ac;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            button{
+                font-size: 1.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                width: 376.5px;
+                height: 142px;
+            }
+            .add{
+                // background: #F3F2F1;
+            }
+            .buy{
+                @extend .flex-ac-jc;
+                gap: 1.5rem;
+                background: #FFFFFF;
+                &:hover{
+                    svg{
+                        animation: shakeRight 0.8s linear forwards;
+                    }
+                }
+            }
+        }
+    }
+    
+    .overlay{
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        .img{
+            @extend .flex-ac-jc;
+        }
+    }
+
+
+    @keyframes shakeRight {
+        0% {
+          transform: translateX(0);
+        }
+        60% {
+          transform: translateX(-20%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+    @include media(">=2000px"){
+        &--left{
+            .img{
+                bottom: 40%;
+                img{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

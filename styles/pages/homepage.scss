@@ -1,0 +1,54 @@
+.page-one{
+    position: relative;
+    img{
+        margin-left: 6rem !important;
+    }
+   &--info{
+       @extend .flex-ac;
+       flex-direction: column;
+       position: absolute;
+       left: 4rem;
+       top: 12rem;
+       z-index: 9;
+       h1{
+        text-align: center;
+       }
+   }
+}
+
+.page-two {
+    display: flex;
+    position: relative;
+    transition: all 1s linear;
+    &--info{
+        position: absolute;
+        left: 5rem;
+        top: 10rem;
+    }
+    &--img{
+        position: relative;
+        top: -8rem;
+        right: -44rem;
+    }
+}
+
+.page-one, .page-two {
+    button{
+        width:235px;
+        height: 74px;
+        font-size: 1.75rem;
+        font-weight: 700;
+        border: 1px solid #000000;
+        transition: all 0.3s linear;
+        margin-top: 2rem;
+        &:hover{
+            background: #000000;
+            color: #FFFFFF;
+        }
+       }
+    h1{
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 76px;
+    }
+}

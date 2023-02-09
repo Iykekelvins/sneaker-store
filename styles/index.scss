@@ -1,0 +1,15 @@
+//BASE STYLES
+@import "./base/app.scss";
+@import "./base/colors.scss";
+@import "./base/variables.scss";
+@import "./base/media.scss";
+@import "./base/animations.scss";
+
+//COMPONENTS
+@import "./components/layout.scss";
+@import "./components/product-page.scss";
+@import "./components/cart-item.scss";
+
+//PAGES
+@import "./pages/homepage.scss";
+@import "./pages/products.scss";

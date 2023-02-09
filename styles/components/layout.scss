@@ -1,0 +1,62 @@
+.layout{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sidebar{
+    padding-top: 5rem;
+    width: 122px;
+    ul{
+        @extend .flex-ac;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    li{
+        color: rgba(0, 0, 0, 0.9);
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        padding-left: 3rem;
+        cursor: pointer;
+    }
+    button{
+        margin-left: 1.55rem;
+    }
+}
+
+.social-links{
+    @extend .flex-ac;
+    flex-direction: column;
+    gap: 5rem;
+    padding-top: 5rem;
+    width: 122px;
+    z-index: 9;
+}
+
+    nav{
+        @extend .flex-ac;
+        padding: 4rem 0 4rem 6rem;
+        background: #FFFFFF;
+        margin: 0 auto;
+        max-width: 1440px;
+        svg{
+            margin-left: 6rem
+        }
+        .nav-links{
+            @extend .flex-ac;
+            gap: 6.3rem;
+            li{
+                color: rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+        }
+        .sub-menu{
+            // position: absolute;
+            left: -6rem;
+            bottom: -2rem;
+            width: 1000px;
+        }
+        .menu{
+            position: absolute;
+            right: 3rem;
+        }
+    }
